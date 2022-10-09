@@ -1,0 +1,126 @@
+.grid {
+    display: grid;
+    grid-template-rows: 1fr 1fr 4fr 1fr;
+    height: 100vh;
+    grid-template-areas: 
+    "nav"
+    "selector"
+    "gallery"
+    "footer";
+}
+
+nav {
+    display: flex;
+    justify-content:space-between;
+    background-color: black;
+    color: white;
+    align-items: center;
+    grid-area: nav;
+}
+.text-nav {
+    display: none;
+    color: white;
+}
+nav div {
+    display: flex;
+    align-items: center;
+}
+.selector {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 1rem;
+    background-color: lightgray;
+    grid-area: selector;
+}
+.selector p{
+    margin-top: 0;
+    margin-bottom: 0.5rem;
+}
+select {
+    background-color: white;
+    padding: 10px;
+}
+.gallery {
+    grid-area: gallery;
+}
+.products {
+    overflow-y: scroll;
+    height: 60vh;
+}
+.card {
+    display: flex;
+    flex-direction: column;
+    border: solid black 1px;
+    align-items: center;
+    margin: 10px;
+    padding: 5px;
+    box-shadow: 5px 5px #888888;
+}
+.card img {
+    width: 100%;
+}
+
+button {
+    background-color: blue;
+    border-radius: 5px;
+    padding: 5px;
+    color: white;
+}
+ul {
+    display: flex;
+    justify-content: center;
+    padding: 0;
+}
+li {
+    padding: 10px;
+    list-style: none;
+    border: solid black 1px;
+}
+footer {
+    background-color: gray;
+    color:white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    grid-area: footer;
+    text-align: center;
+}
+
+.media {
+    padding: 10px;
+}
+
+.footer-text p {
+    margin-top: 0;
+}
+
+@media (min-width: 576px) {
+    .grid {
+        grid-template-areas: 
+        "nav selector"
+        "nav gallery"
+        "footer gallery";
+        grid-template-columns: 1fr 6fr;
+        grid-template-rows: 1fr 5fr 1fr ;
+    }
+    .bars i {
+        display: none; 
+    }
+    nav {
+        flex-direction: column;
+        justify-content: flex-start;
+    }
+    .text-nav {
+        display: flex;
+        flex-direction: column;
+    }
+    .products {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+        height: auto;
+    }
+    .gallery {
+        overflow-y: hidden;
+    }
+}
